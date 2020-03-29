@@ -153,14 +153,25 @@ export default class Classes extends Component {
   render() {
     const { loading, classes } = this.state;
     if (!loading) {
-      return (
-        <Screen safeViewDisabled>
-          <FlatList
-            data={classes}
-            renderItem={this.renderClass}
-          />
-        </Screen>
-      );
+      if (classes.length > 0) {
+        return (
+          <Screen safeViewDisabled>
+            <FlatList
+              data={classes}
+              renderItem={this.renderClass}
+            />
+          </Screen>
+        );
+      }
+      else {
+        return (
+          <Screen>
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+              <Text style={{textAlign: 'center', padding: 30}}>There are currently no classes offered this quarter!</Text>
+            </View>
+          </Screen>
+        )
+      }
     }
     return (
       <Screen safeViewDisabled>

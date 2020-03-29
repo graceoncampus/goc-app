@@ -85,23 +85,25 @@ export default class Events extends Component {
   render = () => {
     const { loading, events } = this.state;
     if (!loading) {
-      return (
-        <Screen>
-          <FlatList
-            data={events}
-            renderItem={this.renderEvent}
-          />
-        </Screen>
-      );
-    }
-    if (!loading && events === []) {
-      return (
-        <Screen>
-          <View style={{ paddingBottom: 0, flex: 0.8, backgroundColor: 'transparent' }} styleName="text-centric">
-            <Text>No upcoming events!</Text>
-          </View>
-        </Screen>
-      );
+      if (events.length > 0) {
+        return (
+          <Screen>
+            <FlatList
+              data={events}
+              renderItem={this.renderEvent}
+            />
+          </Screen>
+        );
+      }
+      else {
+        return (
+          <Screen>
+            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+              <Text style={{textAlign: 'center'}}>No upcoming events!</Text>
+            </View>
+          </Screen>
+        );
+      }
     }
     return (
       <Screen>
