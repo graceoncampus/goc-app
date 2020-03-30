@@ -20,5 +20,10 @@ module.exports = {
         android: null // disable Android platform, other platforms will still autolink if provided
       }
     },
+    'react-native-linear-gradient': {
+      platforms: {
+        android: null // disable Android platform, other platforms will still autolink if provided
+      }
+    },
   }
 }

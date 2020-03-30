@@ -14,6 +14,7 @@ import android.os.Bundle;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.guichaguri.trackplayer.TrackPlayer;
 import com.microsoft.codepush.react.CodePush;
+import com.BV.LinearGradient.LinearGradientPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -29,10 +30,11 @@ public class MainApplication extends Application implements ReactApplication {
           @SuppressWarnings("UnnecessaryLocalVariable")
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
-
           // packages.add(new MyReactNativePackage());
+          packages.add(new CodePush(getResources().getString(R.string.CodePushDeploymentKey), getApplicationContext(), BuildConfig.DEBUG));
           packages.add(new TrackPlayer());
           packages.add(new SplashScreenReactPackage());
+          packages.add(new LinearGradientPackage());
           return packages;
         }
 

@@ -78,6 +78,7 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
+    entryFile: 'index.js',
     enableHermes: false,  // clean and rebuild if changing
     nodeExecutableAndArgs : ["/usr/local/bin/node"]
 ]
@@ -198,6 +199,7 @@ dependencies {
     implementation project(':react-native-track-player')
     implementation project(':react-native-splash-screen')
     implementation project(':react-native-code-push')
+    implementation project(':react-native-linear-gradient')
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
