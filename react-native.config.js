@@ -25,5 +25,10 @@ module.exports = {
         android: null // disable Android platform, other platforms will still autolink if provided
       }
     },
+    '@react-native-community/viewpager': {
+      platforms: {
+        android: null // disable Android platform, other platforms will still autolink if provided
+      }
+    },
   }
 }
