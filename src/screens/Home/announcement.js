@@ -8,7 +8,6 @@ import { Chevron } from '../../icons';
 import globalStyles from '../../theme';
 import { parseAndFindURLs, getRelativeTime } from '../../utils';
 
-const chrisImage = require('../../images/chris.png');
 const gocImage = require('../../images/notification-icon.png');
 
 export const Meta = ({ announcement, truncated }) => {
@@ -23,13 +22,13 @@ export const Meta = ({ announcement, truncated }) => {
             height: 24,
             marginRight: 8
           }}
-          source={announcement.role === 'Chris Gee' ? chrisImage : gocImage}
+          source={gocImage}
         />
         <View style={globalStyles.vertical}>
           <Text style={[globalStyles.small, globalStyles.bold]}>{announcement.role}</Text>
           {announcement.date && (
             <Text style={[globalStyles.caption, { marginTop: -4 }]}>
-              {getRelativeTime(new Date(announcement.date.toString()))}
+              {getRelativeTime(new Date(announcement.date.toDate()))}
             </Text>
           )}
         </View>
@@ -39,7 +38,7 @@ export const Meta = ({ announcement, truncated }) => {
           {announcement.title}
         </Text>
         {truncated ? (
-          <Text style={globalStyles.subtitle} numberOfLines={2} ellipsizeMode="tail">
+          <Text style={globalStyles.subtitle} numberOfLines={7} ellipsizeMode="tail">
             {description}
           </Text>
         ) : (

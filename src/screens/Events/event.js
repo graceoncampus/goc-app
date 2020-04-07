@@ -130,7 +130,7 @@ export default class Event extends Component {
                 {description[1] && (
                   <Text
                     styleName="paragraph"
-                    style={{ color: '#ae956b' }}
+                    style={{ color: '#539ab9' }}
                     onPress={() => Linking.openURL(description[1])}
                   >
                     {description[1]}

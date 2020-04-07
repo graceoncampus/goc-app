@@ -66,7 +66,7 @@ export default class Blog extends Component {
             }}
             >
               <Text styleName="bold" style={{ marginVertical: 6 }}>{entities.decode(title)}</Text>
-              <Text styleName="caption" style={{ marginBottom: 10 }}>{category + getRelativeTime(new Date(date))}</Text>
+              <Text styleName="caption">{category + "Posted " + (postDate.getMonth() + 1).toString() + "/" + postDate.getDate().toString() + "/" + postDate.getFullYear().toString()}</Text>
               <HTMLView paragraphBreak={'\n'} value={cont} renderNode={node => (node.name === 'img' ? null : undefined)} />
             </View>
           </ScrollView>

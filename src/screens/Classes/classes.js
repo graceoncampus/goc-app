@@ -54,9 +54,6 @@ export const Meta = ({
 
 export default class Classes extends Component {
   static navigationOptions = ({ navigation }) => ({
-    drawer: () => ({
-      label: 'Classes',
-    }),
     title: 'CLASSES',
     headerLeft: (
       <TouchableOpacity style={{ padding: 15 }} onPress={() => navigation.openDrawer()}>

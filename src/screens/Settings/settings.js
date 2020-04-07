@@ -15,9 +15,6 @@ import { getCurrentUserData, updateCurrentUserData, signOut } from '../../utils'
 export default class Settings extends Component {
   /* NAVIGATION SET UP */
   static navigationOptions = ({ navigation }) => ({
-    drawer: () => ({
-      label: 'Settings'
-    }),
     title: 'SETTINGS',
     headerLeft: (
       <TouchableOpacity style={{ padding: 15 }} onPress={() => navigation.openDrawer()}>
@@ -42,10 +39,10 @@ export default class Settings extends Component {
       homeChurch
     } = thisUserData;
     // convert birthday from timestamp to MM/DD/YYYY
-    console.log(birthday)
     let birthdayString;
     if (birthday) {
-      // birthdayString = `${birthday.getMonth() + 1}/${birthday.getDate()}/${birthday.getFullYear()}`;
+      bdDate = birthday.toDate();
+      birthdayString = (bdDate.getMonth() + 1).toString() + "/" + bdDate.getDate().toString() + "/" + bdDate.getFullYear().toString();
     } else {
       // set birthdayString to be empty string if no birthday available currently
       birthdayString = '';
@@ -200,7 +197,7 @@ export default class Settings extends Component {
               onFocus={() => this.setState({ focus: 'one' })}
               onSubmitEditing={() => this.setState({ focus: '' })}
               autoCapitalize="none"
-              placeholder="Chris"
+              placeholder="Austin"
               autoCorrect={false}
               value={firstName}
               onChangeText={this.onChangeFirstName}
@@ -216,7 +213,7 @@ export default class Settings extends Component {
               onFocus={() => this.setState({ focus: 'two' })}
               onSubmitEditing={() => this.setState({ focus: '' })}
               autoCapitalize="none"
-              placeholder="Gee"
+              placeholder="Duncan"
               autoCorrect={false}
               value={lastName}
               onChangeText={this.onChangeLastName}

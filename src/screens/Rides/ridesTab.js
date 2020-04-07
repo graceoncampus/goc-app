@@ -12,9 +12,6 @@ import RidesSignup from './rideSignup';
 
 export default class RidesTab extends Component {
   static navigationOptions = ({ navigation }) => ({
-    drawer: () => ({
-      label: 'Rides'
-    }),
     title: 'RIDES',
     headerLeft: (
       <TouchableOpacity style={{ padding: 15 }} onPress={() => navigation.openDrawer()}>
@@ -24,7 +21,18 @@ export default class RidesTab extends Component {
     headerRight: (
       <View />
     ),
-    ...headerStyles
+    headerStyle: {
+      backgroundColor: '#fff',
+      ...Platform.select({
+        ios: { marginTop: 0, paddingTop: 20 },
+        android: {
+          elevation: 0,
+          height: 43,
+        },
+      }),
+      borderBottomWidth: 1,
+      borderBottomColor: '#fff',
+    }
   });
 
   constructor(props) {
@@ -82,7 +90,7 @@ export default class RidesTab extends Component {
           color: '#222222',
           lineHeight: 15
         }}
-        tabBarUnderlineStyle={{ height: 2, backgroundColor: '#ae956b' }}
+        tabBarUnderlineStyle={{ height: 2, backgroundColor: '#539ab9' }}
       >
         <MyRide navigation={navigation} tabLabel="My Ride" />
         <AllRides tabLabel="All Rides" />

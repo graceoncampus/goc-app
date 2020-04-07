@@ -172,7 +172,7 @@ export default class RideSignup extends Component {
     return signedUp ? (
       <Screen>
         <View style={[globalStyles.vvCenter, globalStyles.vhCenter, { flex: 1, marginTop: -50 }]}>
-          <Check fill="#ae956b" style={{ paddingBottom: 45 }} width={30} />
+          <Check fill="#539ab9" style={{ paddingBottom: 45 }} width={30} />
           <Text styleName="center subtitle" style={{ paddingHorizontal: 50 }}>
             You've successfully signed up for a ride online!
           </Text>
@@ -205,7 +205,7 @@ export default class RideSignup extends Component {
               onSubmitEditing={() => this.setState({ focus: '' })}
               autoCapitalize="none"
               autoCorrect={false}
-              placeholder="Chris Gee"
+              placeholder="Austin Duncan"
               keyboardType="email-address"
               value={name}
               onChangeText={this.onChangeName}
@@ -279,7 +279,7 @@ export default class RideSignup extends Component {
               style={{ flex: 1, paddingHorizontal: 15, paddingVertical: 10 }}
               onClick={() => this.setState({ driver: !driver })}
               isChecked={driver}
-              checkBoxColor="#ae956b"
+              checkBoxColor="#539ab9"
               leftText="Driver"
               leftTextStyle={{
                 fontFamily: 'Akkurat',
@@ -295,7 +295,7 @@ export default class RideSignup extends Component {
               onClick={() => this.setState({ morning: !morning })}
               isChecked={morning}
               leftText="Morning (8:30 AM - 12:00 PM)"
-              checkBoxColor="#ae956b"
+              checkBoxColor="#539ab9"
               leftTextStyle={{
                 fontFamily: 'Akkurat',
                 fontStyle: 'normal',
@@ -309,7 +309,7 @@ export default class RideSignup extends Component {
               style={{ flex: 1, paddingHorizontal: 15, paddingVertical: 10 }}
               onClick={() => this.setState({ staying: !staying })}
               isChecked={staying}
-              checkBoxColor="#ae956b"
+              checkBoxColor="#539ab9"
               leftText="Staying (8:30 AM - 7:30 PM)"
               leftTextStyle={{
                 fontFamily: 'Akkurat',
@@ -324,7 +324,7 @@ export default class RideSignup extends Component {
               style={{ flex: 1, paddingHorizontal: 15, paddingVertical: 10 }}
               onClick={() => this.setState({ evening: !evening })}
               isChecked={evening}
-              checkBoxColor="#ae956b"
+              checkBoxColor="#539ab9"
               leftText="Evening (6:00 PM - 7:30 PM)"
               leftTextStyle={{
                 fontFamily: 'Akkurat',

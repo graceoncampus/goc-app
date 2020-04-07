@@ -14,9 +14,6 @@ import store from '../store';
 
 export default class Sermons extends React.Component {
   static navigationOptions = ({ navigation }) => ({
-    drawer: () => ({
-      label: 'Sermons'
-    }),
     title: 'SERMONS',
     headerLeft: (
       <TouchableOpacity style={{ padding: 15 }} onPress={() => navigation.openDrawer()}>
@@ -24,7 +21,18 @@ export default class Sermons extends React.Component {
       </TouchableOpacity>
     ),
     headerRight: <View />,
-    ...headerStyles
+    headerStyle: {
+      backgroundColor: '#fff',
+      ...Platform.select({
+        ios: { marginTop: 0, paddingTop: 20 },
+        android: {
+          elevation: 0,
+          height: 43,
+        },
+      }),
+      borderBottomWidth: 1,
+      borderBottomColor: '#fff',
+    }
   });
 
   constructor() {
@@ -136,16 +144,16 @@ export default class Sermons extends React.Component {
 
   renderSermon = (row) => {
     const sermon = row.item;
-    const date = new Date(sermon.date.toString());
+    const date = new Date(sermon.date.toDate());
     return (
       <TouchableOpacity onPress={() => this.play(sermon.id)}>
-        <View style={[{ paddingBottom: 15 }, globalStyles.borderBottom, globalStyles.row]}>
+        <View style={[{ paddingBottom: 15 }, globalStyles.row]}>
           <View style={[globalStyles.vertical]}>
             <View style={[globalStyles.horizontal, globalStyles.hvCenter]}>
               <View style={globalStyles.vertical}>
-                <Text style={[globalStyles.small, globalStyles.bold]}>{sermon.title}</Text>
+                <Text style={[globalStyles.small2]}>{sermon.title}</Text>
                 {sermon.date && (
-                  <Text style={[globalStyles.caption, { marginTop: -2 }]}>
+                  <Text style={[globalStyles.caption, { marginTop: 4 , fontSize: 13}]}>
                     {`${date.getMonth()}/${date.getDate()}/${date.getFullYear()} | ${
                       sermon.passage
                     } | ${sermon.artist}`}
@@ -166,14 +174,28 @@ export default class Sermons extends React.Component {
       return (
         <Screen>
           <SearchBar
-            placeholder="Search sermons..."
+            placeholder="Search sermon title, speaker, or verse"
             onChangeText={this.updateSearch}
             value={searchText}
-            containerStyle={{ backgroundColor: 'white' }}
-            inputContainerStyle={{ backgroundColor: 'white' }}
+            containerStyle={{
+              backgroundColor: 'white',
+              borderTopColor: '#fff',
+              borderBottomColor: '#fff',
+              shadowOffset:{ height: 1.5 },
+              shadowColor: 'black',
+              shadowOpacity: 0.2,
+              shadowRadius: 3,
+            }}
+            inputContainerStyle={{ backgroundColor: '#rgba(0, 0, 0, .04)'}}
+            inputStyle={{fontSize: 15}}
             lightTheme
+            round
           />
-          <FlatList data={searchText ? searchResults : feed} renderItem={this.renderSermon} onEndReached={this.loadPage} />
+          <FlatList
+            data={searchText ? searchResults : feed}
+            renderItem={this.renderSermon}
+            onEndReached={this.loadPage}
+          />
           <Player navigation={navigation} onTogglePlayback={this.togglePlayback} />
         </Screen>
       );

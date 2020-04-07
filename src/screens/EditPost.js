@@ -19,9 +19,6 @@ const options = [
   {
     name: 'Grace on Campus'
   },
-  {
-    name: 'Chris Gee'
-  }
 ];
 
 const sendAlert = () => {

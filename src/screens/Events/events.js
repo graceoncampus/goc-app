@@ -14,9 +14,6 @@ import { Menu } from '../../icons';
 
 export default class Events extends Component {
   static navigationOptions = ({ navigation }) => ({
-    drawer: () => ({
-      label: 'Events',
-    }),
     title: 'EVENTS',
     headerLeft: (
       <TouchableOpacity style={{ padding: 15 }} onPress={() => navigation.openDrawer()}>

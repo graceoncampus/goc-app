@@ -15,9 +15,6 @@ export default class Home extends Component {
       admin: 0,
     });
     return ({
-      drawer: () => ({
-        label: 'Announcements',
-      }),
       title: 'ANNOUNCEMENTS',
       headerLeft: (
         <TouchableOpacity style={{ padding: 15 }} onPress={() => navigation.openDrawer()}>

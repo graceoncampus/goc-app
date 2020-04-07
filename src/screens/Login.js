@@ -93,7 +93,7 @@ export default class Login extends Component {
           <View style={globalStyles.tile}>
             <Logo
               style={{ marginTop: 50, marginBottom: 10 }}
-              width={150}
+              width={146}
               height={57.75}
               color={variables.primary}
             />

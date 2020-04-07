@@ -66,7 +66,8 @@ export default class IndividualUser extends Component {
       const { birthday } = user; // NEED TO CONVERT UNIX BIRTHDAY TO REGULAR DATE
       let birthdayString = '';
       if (birthday) {
-        birthdayString = `${birthday.getMonth() + 1}/${birthday.getDate()}/${birthday.getFullYear()}`;
+        bdDate = birthday.toDate();
+        birthdayString = (bdDate.getMonth() + 1).toString() + "/" + bdDate.getDate().toString() + "/" + bdDate.getFullYear().toString();
       }
       const academic = `Class of ${user.grad}, ${user.major}`;
       return (
@@ -113,8 +114,8 @@ export default class IndividualUser extends Component {
                   style={{ borderColor: 'transparent' }}
                   onPress={() => Linking.openURL(`tel:${user.phoneNumber}`)}
                 >
-                  <Phone fill="#ae956b" style={{ marginBottom: 5 }} />
-                  <Text styleName="caption" style={{ color: '#ae956b' }}>
+                  <Phone fill="#539ab9" style={{ marginBottom: 5 }} />
+                  <Text styleName="caption" style={{ color: '#539ab9' }}>
                     CALL
                   </Text>
                 </Button>
@@ -125,8 +126,8 @@ export default class IndividualUser extends Component {
                   style={{ borderColor: 'transparent' }}
                   onPress={() => Linking.openURL(`sms:${user.phoneNumber}`)}
                 >
-                  <Message fill="#ae956b" style={{ marginBottom: 5 }} />
-                  <Text styleName="caption" style={{ color: '#ae956b' }}>
+                  <Message fill="#539ab9" style={{ marginBottom: 5 }} />
+                  <Text styleName="caption" style={{ color: '#539ab9' }}>
                     TEXT
                   </Text>
                 </Button>
@@ -137,8 +138,8 @@ export default class IndividualUser extends Component {
                   style={{ borderColor: 'transparent' }}
                   onPress={() => Linking.openURL(`mailto:${user.email}`)}
                 >
-                  <Mail fill="#ae956b" style={{ marginBottom: 5 }} />
-                  <Text styleName="caption" style={{ color: '#ae956b' }}>
+                  <Mail fill="#539ab9" style={{ marginBottom: 5 }} />
+                  <Text styleName="caption" style={{ color: '#539ab9' }}>
                     EMAIL
                   </Text>
                 </Button>

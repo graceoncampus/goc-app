@@ -25,9 +25,6 @@ const fields = [
 const BLOG_ENDPOINT = `https://public-api.wordpress.com/rest/v1.1/sites/graceoncampusucla.wordpress.com/posts?fields=${fields}`;
 export default class Blogs extends Component {
   static navigationOptions = ({ navigation }) => ({
-    drawer: () => ({
-      label: 'Blogs'
-    }),
     title: 'BLOG',
     headerLeft: (
       <TouchableOpacity
@@ -103,6 +100,7 @@ export default class Blogs extends Component {
     const {
       title, date, excerpt, image, category
     } = row.item;
+    postDate = new Date(date)
     return (
       <TouchableOpacity
         onPress={() => {
@@ -116,26 +114,21 @@ export default class Blogs extends Component {
           flex: 1,
           marginHorizontal: 15,
           marginTop: 15,
-          shadowColor: 'rgba(0, 0, 0, 0.5)',
-          shadowOpacity: 0.1,
-          shadowOffset: { width: 1, height: 1 },
           backgroundColor: '#fff',
-          borderRadius: 4
         }}
         >
           {image && (
             <Fragment>
               <FastImage
-                style={{
-                  height: 150,
-                  flex: 1,
-                }}
                 source={{ uri: image }}
+                style={{
+                  height: 185,
+                  flex: 1,
+                  borderRadius: 6,
+                }}
                 resizeMode={FastImage.resizeMode.cover}
               />
-              <Divider type="line" />
             </Fragment>
-
           )
           }
           <View style={{
@@ -143,10 +136,10 @@ export default class Blogs extends Component {
             paddingBottom: 20
           }}
           >
-            <Text styleName="bold" style={{ marginVertical: 6 }}>{entities.decode(title)}</Text>
-            <Text styleName="caption">{category + getRelativeTime(new Date(date))}</Text>
+            <Text styleName="bold" style={{ marginTop: 2, marginBottom: 6 }}>{entities.decode(title)}</Text>
+            <Text styleName="caption">{category + "Posted " + (postDate.getMonth() + 1).toString() + "/" + postDate.getDate().toString() + "/" + postDate.getFullYear().toString()}</Text>
             <Text
-              style={{ marginTop: 10 }}
+              style={{ marginTop: 10, marginBottom: 10, color: '#848895' }}
               numberOfLines={2}
               styleName="paragraph"
             >
@@ -161,7 +154,7 @@ export default class Blogs extends Component {
   render() {
     const { loading, blogs } = this.state;
     return (
-      <Screen style={{ backgroundColor: '#f2f2f2' }} safeViewDisabled>
+      <Screen safeViewDisabled>
         {
         loading ? (
           <View style={[globalStyles.vvCenter, globalStyles.vhCenter, { flex: 1 }]}>

@@ -1,7 +1,7 @@
 import { StyleSheet, Platform } from 'react-native';
 
 export const variables = {
-  primary: '#ae956b',
+  primary: '#539ab9',
 };
 
 export const headerStyles = {
@@ -15,7 +15,11 @@ export const headerStyles = {
       },
     }),
     borderBottomWidth: 1,
-    borderBottomColor: '#ecedef',
+    borderBottomColor: '#fff',
+    shadowOffset:{ height: 1.5 },
+    shadowColor: 'black',
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
   },
   headerTitleStyle: {
     fontWeight: 'normal',
@@ -66,6 +70,11 @@ export default StyleSheet.create({
   small: {
     fontSize: 14,
     lineHeight: 16,
+  },
+
+  small2: {
+    fontSize: 15,
+    lineHeight: 20,
   },
 
   subtitle: {

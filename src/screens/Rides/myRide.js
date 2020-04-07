@@ -20,7 +20,7 @@ export default class MyRide extends Component {
       </TouchableOpacity>
     ),
     headerRight: <View />,
-    ...headerStyles
+    ...headerStyles,
   });
 
   constructor(props) {

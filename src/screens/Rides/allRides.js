@@ -17,14 +17,14 @@ function renderRide(ride) {
           globalStyles.horizontal,
           globalStyles.vhStart,
           globalStyles.spaceBetween,
-          { paddingVertical: 10, paddingHorizontal: 15, backgroundColor: ride.index % 2 === 0 ? '#fff' : '#F2F2F2' }]
+          { paddingVertical: 10, paddingHorizontal: 15, backgroundColor: '#fff', borderWidth: 0, shadowColor: 'rgba(0, 0, 0, 0.5)',
+          shadowOpacity: 0.4, shadowOffset: { height: 2.5 }, shadowRadius: 2, borderRadius: 8, marginBottom: 12, marginHorizontal: 8 }]
         }
         key={ride.key}
       >
-        <Text styleName="paragraph" style={{ textAlign: 'right' }}>{car.driver.name}</Text>
+        <Text styleName="paragraph bold" style={{ textAlign: 'right' }}>{car.driver.name}</Text>
         <Text styleName="paragraph" style={{ textAlign: 'right' }}>{riderNames.join('\n')}</Text>
       </View>
-      <Divider type="line" />
     </Fragment>
   );
 }
@@ -90,11 +90,11 @@ export default class AllRides extends Component {
     if (!loading && isRidesUp) {
       return (
         <Screen safeViewDisabled>
-          <Divider type="sectionHeader" style={{ paddingHorizontal: 15, paddingBottom: 5 }}>
-            <Text styleName="caption">Driver</Text>
-            <Text styleName="caption">Riders</Text>
+          <Divider type="sectionHeader" style={{ paddingHorizontal: 15, paddingBottom: 5, backgroundColor: '#f9f9f9' }}>
+            <Text styleName="subtitle">Driver</Text>
+            <Text styleName="subtitle">Riders</Text>
           </Divider>
-          <ScrollView>
+          <ScrollView style={{backgroundColor: '#f9f9f9', paddingTop: 5}}>
             <FlatList data={rides} renderItem={renderRide} style={{ paddingBottom: 30 }} />
           </ScrollView>
         </Screen>

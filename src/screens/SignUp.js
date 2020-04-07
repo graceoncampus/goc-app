@@ -298,7 +298,7 @@ export default class SignUp extends Component {
               onSubmitEditing={() => this.setState({ focus: '' })}
               autoCorrect={false}
               autoComplete={false}
-              placeholder="Chris"
+              placeholder="Austin"
               value={First_name}
               onChangeText={this.onChangeFirstName}
               returnKeyType="next"
@@ -314,7 +314,7 @@ export default class SignUp extends Component {
               onSubmitEditing={() => this.setState({ focus: '' })}
               autoCorrect={false}
               autoComplete={false}
-              placeholder="Gee"
+              placeholder="Duncan"
               value={Last_name}
               onChangeText={this.onChangeLastName}
               returnKeyType="next"

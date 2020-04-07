@@ -25,7 +25,7 @@ import Sermon from './src/screens/Sermon';
 import events from './src/screens/Events/events';
 import event from './src/screens/Events/event';
 import classes from './src/screens/Classes/classes';
-import calendar from './src/screens/Calendar';
+// import calendar from './src/screens/Calendar';
 import classDetails from './src/screens/Classes/class';
 import classEnroll from './src/screens/Classes/classEnrollment';
 import IndividualUser from './src/screens/Roster/individualUser';
@@ -43,6 +43,7 @@ import { saveToken, setCurrentUserData } from './src/utils';
 import { Logo } from './src/icons';
 import registerAppListener from './src/listeners';
 import store from './src/store';
+import { Icon } from 'react-native-elements'
 
 function fromLeft(duration = 500) {
   return {
@@ -196,61 +197,100 @@ const blogStack = createStackNavigator({
   Blo: { screen: blog }
 });
 
-const calendarStack = createStackNavigator({
-  Calendar: { screen: calendar }
-});
+// const calendarStack = createStackNavigator({
+//   Calendar: { screen: calendar }
+// });
 
 const AppStack = createDrawerNavigator(
   {
     Home: {
       screen: homeStack,
       navigationOptions: {
-        gesturesEnabled: false
+        gesturesEnabled: false,
+        drawerLabel: "Home",
+        drawerIcon: ({tintColor}) => (
+          <Icon
+            name='home'
+            type='material'
+            color={tintColor}
+          />
+        ),
       }
     },
     Rides: {
       screen: ridesStack,
       navigationOptions: {
-        gesturesEnabled: false
+        gesturesEnabled: false,
+        drawerLabel: "Rides",
+        drawerIcon: ({tintColor}) => (
+          <Icon name='car' type='material-community' color={tintColor}/>
+        ),
       }
     },
-    Sermons: sermonStack,
-    Calendar: {
-      screen: calendarStack,
+    Sermons: {
+      screen: sermonStack,
       navigationOptions: {
-        gesturesEnabled: false
+        drawerLabel: "Sermons",
+        drawerIcon: ({tintColor}) => (
+          <Icon name='book' type='font-awesome' color={tintColor} size={22}/>
+        ),
       }
     },
+    // Calendar: {
+    //   screen: calendarStack,
+    //   navigationOptions: {
+    //     gesturesEnabled: false,
+    //     drawerLabel: "Calendar",
+    //     drawerIcon: ({tintColor}) => (
+    //       <Icon name='event-note' type='material' color={tintColor} size={22}/>
+    //     ),
+    //   }
+    // },
     Events: {
       screen: eventsStack,
       navigationOptions: {
-        gesturesEnabled: false
+        gesturesEnabled: false,
+        drawerLabel: "Events",
+        drawerIcon: ({tintColor}) => (
+          <Icon name='event-note' type='material' color={tintColor} size={22}/>
+        ),
       }
     },
     Classes: {
       screen: classesStack,
       navigationOptions: {
-        gesturesEnabled: false
+        gesturesEnabled: false,
+        drawerLabel: "Classes",
+        drawerIcon: ({tintColor}) => (
+          <Icon name='graduation-cap' type='font-awesome' color={tintColor} size={20}/>
+        ),
       }
     },
     Blog: {
       screen: blogStack,
       navigationOptions: {
-        gesturesEnabled: false
+        gesturesEnabled: false,
+        drawerLabel: "Blog",
+        drawerIcon: ({tintColor}) => (
+          <Icon name='edit' type='material' color={tintColor}/>
+        ),
       }
     },
     Settings: {
       screen: settingsStack,
       navigationOptions: {
-        gesturesEnabled: false
+        gesturesEnabled: false,
+        drawerLabel: "Settings",
+        drawerIcon: ({tintColor}) => (
+          <Icon name='settings' type='material' color={tintColor}/>
+        ),
       }
     }
   },
   {
-    drawerWidth: 160,
+    drawerWidth: 240,
     contentOptions: {
-      activeTintColor: '#fff',
-      activeBackgroundColor: variables.primary,
+      activeTintColor: variables.primary,
       labelStyle: {
         fontFamily: 'Akkurat',
         fontSize: 16
