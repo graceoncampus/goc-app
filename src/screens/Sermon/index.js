@@ -13,9 +13,6 @@ import store from '../../store';
 
 export default class Player extends Component {
   static navigationOptions = () => ({
-    drawer: () => ({
-      label: 'Sermons',
-    }),
     header: null
   })
 

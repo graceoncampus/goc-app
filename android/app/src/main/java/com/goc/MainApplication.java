@@ -23,6 +23,7 @@ import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
 import io.invertase.firebase.functions.RNFirebaseFunctionsPackage;
 import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage;
+import com.reactnativecommunity.viewpager.RNCViewPagerPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -50,6 +51,7 @@ public class MainApplication extends Application implements ReactApplication {
           packages.add(new TrackPlayer());
           packages.add(new SplashScreenReactPackage());
           packages.add(new LinearGradientPackage());
+          packages.add(new RNCViewPagerPackage());
           return packages;
         }
 

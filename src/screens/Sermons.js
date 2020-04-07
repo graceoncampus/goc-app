@@ -32,7 +32,18 @@ export default class Sermons extends React.Component {
       }),
       borderBottomWidth: 1,
       borderBottomColor: '#fff',
-    }
+    },
+    headerTitleStyle: {
+      fontWeight: 'normal',
+      alignSelf: 'center',
+      fontFamily: 'Akkurat',
+      fontSize: 15,
+      color: '#222222',
+      paddingTop: 4,
+      lineHeight: 14,
+      textAlign: 'center',
+      flex: 1,
+    },
   });
 
   constructor() {
@@ -185,6 +196,11 @@ export default class Sermons extends React.Component {
               shadowColor: 'black',
               shadowOpacity: 0.2,
               shadowRadius: 3,
+              ...Platform.select({
+                android: {
+                  elevation: 5,
+                },
+              }),
             }}
             inputContainerStyle={{ backgroundColor: '#rgba(0, 0, 0, .04)'}}
             inputStyle={{fontSize: 15}}

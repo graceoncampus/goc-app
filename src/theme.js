@@ -10,7 +10,7 @@ export const headerStyles = {
     ...Platform.select({
       ios: { marginTop: 0, paddingTop: 20 },
       android: {
-        elevation: 0,
+        elevation: 5,
         height: 43,
       },
     }),

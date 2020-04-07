@@ -32,7 +32,18 @@ export default class RidesTab extends Component {
       }),
       borderBottomWidth: 1,
       borderBottomColor: '#fff',
-    }
+    },
+    headerTitleStyle: {
+      fontWeight: 'normal',
+      alignSelf: 'center',
+      fontFamily: 'Akkurat',
+      fontSize: 15,
+      color: '#222222',
+      paddingTop: 4,
+      lineHeight: 14,
+      textAlign: 'center',
+      flex: 1,
+    },
   });
 
   constructor(props) {

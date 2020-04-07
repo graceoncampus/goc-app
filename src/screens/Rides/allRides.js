@@ -18,7 +18,9 @@ function renderRide(ride) {
           globalStyles.vhStart,
           globalStyles.spaceBetween,
           { paddingVertical: 10, paddingHorizontal: 15, backgroundColor: '#fff', borderWidth: 0, shadowColor: 'rgba(0, 0, 0, 0.5)',
-          shadowOpacity: 0.4, shadowOffset: { height: 2.5 }, shadowRadius: 2, borderRadius: 8, marginBottom: 12, marginHorizontal: 8 }]
+          shadowOpacity: 0.4, shadowOffset: { height: 2.5 }, shadowRadius: 2, borderRadius: 8, marginBottom: 12, marginHorizontal: 8,
+          ...Platform.select({ android: { elevation: 3, },})
+         }]
         }
         key={ride.key}
       >
