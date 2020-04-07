@@ -67,6 +67,7 @@ export default class Sermons extends React.Component {
     this.loadPage();
     TrackPlayer.setupPlayer();
     TrackPlayer.updateOptions({
+      stopWithApp: true,
       capabilities: [
         TrackPlayer.CAPABILITY_PLAY,
         TrackPlayer.CAPABILITY_PAUSE,

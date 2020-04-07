@@ -73,6 +73,7 @@ export default StyleSheet.create({
   },
 
   small2: {
+    color: '#222222',
     fontSize: 15,
     lineHeight: 20,
   },

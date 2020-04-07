@@ -289,6 +289,7 @@ const AppStack = createDrawerNavigator(
   },
   {
     drawerWidth: 240,
+    overlayColor: .2,
     contentOptions: {
       activeTintColor: variables.primary,
       labelStyle: {
@@ -395,7 +396,7 @@ class AuthLoadingScreen extends React.Component {
         ]}
       >
         <StatusBar barStyle="light-content" backgroundColor="transparent" translucent />
-        <Logo style={{ marginBottom: 30 }} width={150} height={57.75} color="#fff" />
+        <Logo style={{ marginBottom: 30 }} width={145} height={57.75} color="#fff" />
         <ActivityIndicator color="#fff" />
       </SafeAreaView>
     );

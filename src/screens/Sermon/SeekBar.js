@@ -49,7 +49,7 @@ export default SeekBar;
 
 const styles = StyleSheet.create({
   slider: {
-    marginTop: -12,
+    marginTop: 0,
   },
   container: {
     paddingLeft: 16,
