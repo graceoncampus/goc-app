@@ -40,10 +40,9 @@ import blogs from './src/screens/Blog/blogs';
 import blog from './src/screens/Blog/blog';
 import RidesTab from './src/screens/Rides/ridesTab';
 import { saveToken, setCurrentUserData } from './src/utils';
-import { Logo } from './src/icons';
+import { Logo, House, Car, Bible, Calendar, Graduation, Pen, Gear } from './src/icons';
 import registerAppListener from './src/listeners';
 import store from './src/store';
-import { Icon } from 'react-native-elements'
 
 function fromLeft(duration = 500) {
   return {
@@ -209,11 +208,7 @@ const AppStack = createDrawerNavigator(
         gesturesEnabled: false,
         drawerLabel: "Home",
         drawerIcon: ({tintColor}) => (
-          <Icon
-            name='home'
-            type='material'
-            color={tintColor}
-          />
+          <House color={tintColor}/>
         ),
       }
     },
@@ -223,7 +218,7 @@ const AppStack = createDrawerNavigator(
         gesturesEnabled: false,
         drawerLabel: "Rides",
         drawerIcon: ({tintColor}) => (
-          <Icon name='car' type='material-community' color={tintColor}/>
+          <Car color={tintColor}/>
         ),
       }
     },
@@ -232,7 +227,7 @@ const AppStack = createDrawerNavigator(
       navigationOptions: {
         drawerLabel: "Sermons",
         drawerIcon: ({tintColor}) => (
-          <Icon name='book' type='font-awesome' color={tintColor} size={22}/>
+          <Bible color={tintColor}/>
         ),
       }
     },
@@ -252,7 +247,7 @@ const AppStack = createDrawerNavigator(
         gesturesEnabled: false,
         drawerLabel: "Events",
         drawerIcon: ({tintColor}) => (
-          <Icon name='event-note' type='material' color={tintColor} size={22}/>
+          <Calendar color={tintColor}/>
         ),
       }
     },
@@ -262,7 +257,7 @@ const AppStack = createDrawerNavigator(
         gesturesEnabled: false,
         drawerLabel: "Classes",
         drawerIcon: ({tintColor}) => (
-          <Icon name='graduation-cap' type='font-awesome' color={tintColor} size={20}/>
+          <Graduation color={tintColor}/>
         ),
       }
     },
@@ -272,7 +267,7 @@ const AppStack = createDrawerNavigator(
         gesturesEnabled: false,
         drawerLabel: "Blog",
         drawerIcon: ({tintColor}) => (
-          <Icon name='edit' type='material' color={tintColor}/>
+          <Pen color={tintColor}/>
         ),
       }
     },
@@ -282,7 +277,7 @@ const AppStack = createDrawerNavigator(
         gesturesEnabled: false,
         drawerLabel: "Settings",
         drawerIcon: ({tintColor}) => (
-          <Icon name='settings' type='material' color={tintColor}/>
+          <Gear color={tintColor}/>
         ),
       }
     }

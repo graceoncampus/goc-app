@@ -230,7 +230,7 @@ export default class Settings extends Component {
               onSubmitEditing={() => this.setState({ focus: '' })}
               autoCapitalize="none"
               autoCorrect={false}
-              placeholder="Number"
+              placeholder="Yo Digits"
               value={phoneNumber}
               onChangeText={this.onChangePhoneNumber}
               returnKeyType="next"
@@ -245,7 +245,7 @@ export default class Settings extends Component {
               onFocus={() => this.setState({ focus: 'four' })}
               onSubmitEditing={() => this.setState({ focus: '' })}
               autoCapitalize="none"
-              placeholder="2019"
+              placeholder="2023"
               autoCorrect={false}
               value={grad}
               onChangeText={this.onChangeGrad}

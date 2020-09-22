@@ -238,7 +238,7 @@ export default class RideSignup extends Component {
               onSubmitEditing={() => this.setState({ focus: '' })}
               autoCapitalize="none"
               autoCorrect={false}
-              placeholder="(310)694-5216"
+              placeholder="(123)456-7890"
               keyboardType="phone-pad"
               value={number}
               onChangeText={this.onChangeNumber}

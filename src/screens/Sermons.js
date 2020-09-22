@@ -3,7 +3,7 @@ import TrackPlayer from 'react-native-track-player';
 import {
   TouchableOpacity, ActivityIndicator, Text, FlatList, View
 } from 'react-native';
-import { SearchBar } from 'react-native-elements';
+import SearchBar from 'react-native-search-bar';
 import firebase from 'react-native-firebase';
 
 import globalStyles, { headerStyles } from '../theme';
@@ -186,27 +186,9 @@ export default class Sermons extends React.Component {
       return (
         <Screen>
           <SearchBar
+            ref="searchBar"
             placeholder="Search sermon title, speaker, or verse"
             onChangeText={this.updateSearch}
-            value={searchText}
-            containerStyle={{
-              backgroundColor: 'white',
-              borderTopColor: '#fff',
-              borderBottomColor: '#fff',
-              shadowOffset:{ height: 1.5 },
-              shadowColor: 'black',
-              shadowOpacity: 0.2,
-              shadowRadius: 3,
-              ...Platform.select({
-                android: {
-                  elevation: 5,
-                },
-              }),
-            }}
-            inputContainerStyle={{ backgroundColor: '#rgba(0, 0, 0, .04)'}}
-            inputStyle={{fontSize: 15}}
-            lightTheme
-            round
           />
           <FlatList
             data={searchText ? searchResults : feed}
